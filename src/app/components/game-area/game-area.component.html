@@ -1,0 +1,26 @@
+<div class="title">Wordle</div>
+
+<main>
+
+    <div class="end-game-msg" *ngIf="isGameDone()">
+        <div class="msg-lost" *ngIf="playerLost"> YOU LOSE! </div>
+        <div class="msg-win" *ngIf="playerWin"> YOU WIN! </div>
+    </div>
+  
+    <div class="grid-row" *ngFor="let row of grid">
+        
+        <div class="grid-square-wrapper" *ngFor="let col of row"> 
+            <div [ngClass]="{ 'wrong-place': col.status === WRONG_PLACE,
+                             'right-place': col.status === RIGHT_PLACE,
+                             'wrong-letter': col.status === WRONG_LETTER }">
+                {{col?.letter}}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="error-msg" *ngIf="!!errorMessage">
+        {{ errorMessage }}
+    </div>
+
+</main>

@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { GameAreaComponent } from './components/game-area/game-area.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameAreaComponent
   ],
   imports: [
     BrowserModule
